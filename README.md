@@ -211,11 +211,8 @@ curl -X POST ${SERVICE_URL}/run -H "Content-Type: application/json" -d "{\"appNa
 
 ## Next Steps
 
-While this is a good start to a RAG implementation, a fully working UI will be good to have. Personally I like and am comfortable with openwebui. But Google ADK is not directly compatible. We'll need to build an adapter on top of it.
-
-## Next Next Steps
-
-Build the same thing with Google Cloud Agent Runtime.
+* While this is a good start to a RAG implementation, a fully working UI will be good to have. Personally I like and am comfortable with openwebui. But Google ADK is not directly compatible. We'll need to build an adapter on top of it.
+* Deploy the agent on Google Cloud's agent runtime so we can get a lot of additional things like monitoring, eval and authentication for free.
 
 
 # Future Enhancements
