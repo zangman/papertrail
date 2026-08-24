@@ -1,5 +1,20 @@
 # Enterprise GenAI Knowledge Assistant on GCP using RAG
 
+- [Summary](#summary)
+- [Source data](#source-data)
+- [Extract Transform Load (ETL)](#extract-transform-load-etl)
+  * [Initialize](#initialize)
+  * [Extraction](#extraction)
+  * [Transformation](#transformation)
+  * [Load](#load)
+  * [Testing the semantic search](#testing-the-semantic-search)
+- [GenAI Knowledge Assistant](#genai-knowledge-assistant)
+  * [Setting up on Cloud Run](#setting-up-on-cloud-run)
+  * [Evaluation](#evaluation)
+  * [Clean Up](#clean-up)
+  * [Next Steps](#next-steps)
+- [Future Enhancements](#future-enhancements)
+
 # Summary
 
 This document explains one approach on how to build an enterprise GenAI application on GCP. It uses a source corpus of PDFs which are articles about Tech companies and creates a Retrieval Augmented Generation (RAG) system and a Knowledge Assistant app that uses LLM to fetch the relevant information and answer questions.
