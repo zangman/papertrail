@@ -6,16 +6,16 @@ This document explains one approach on how to build an enterprise GenAI applicat
 
 The implementation is handled in two stages:
 
-1. Extract Transform Load (ETL) - Process the pdfs and generate the embeddings for semantic retrieval  
+1. Extract Transform Load (ETL) - Process the pdfs and generate the embeddings for semantic retrieval
 2. Knowledge Assistant - An application that utilises an LLM with a RAG to provide answers in Q&A style with a chat like UI interface.
 
 Detailed implementation is explained below.
 
 Tech used in the development of this app:
 
-1. Python based code  
-2. Google Cloud Storage for input  
-3. Google BigQuery for storing the chunks and generating embedding vectors  
+1. Python based code
+2. Google Cloud Storage for input
+3. Google BigQuery for storing the chunks and generating embedding vectors
 4. Google Cloud Run for running the ETL and the knowledge assistant.
 5. Google ADK for building the knowledge assistant with built in tools for RAG.
 
@@ -36,22 +36,22 @@ This step handles the entire end to end processing. In detail, it performs the f
 
 ## Initialize
 
-1. Check cloud storage (`input/raw`) for any new pdf files  
+1. Check cloud storage (`input/raw`) for any new pdf files
 2. Generate the document hash and check if the document has already been ingested. If yes, then move the file to the processed folder (`input/processed`)
 3. If a new file, then proceed to extraction.
 4. When completed,  move the file to the processed folder.
 
 ## Extraction
 
-1. Retrieve the metadata of the document. This includes the following:  
-   1. doc_name (ex: Qualcomm.pdf)  
-   2. doc_type (pdf only for now)  
-   3. doc_hash - sha256 hash of the raw binary contents of the file. This is used to identify if the document has already been processed or not  
-   4. ingestion_timestamp - Timestamp of when the file is processed  
-   5. page_count - number of pages in the pdf  
-2. Extract the text broken down by pages as well as sections. While the pages are not used currently, this will help future enhancements.  
-3. Process each section recursively to identify the section heading and content. Sub sections are also processed and nested under the parent section to identify the exact path of the content.  
-4. **Clean up**: Titles and section data is stripped of markdown characters (#, *), stripped of html tags and comments and stripped of excessive spaces and newlines  
+1. Retrieve the metadata of the document. This includes the following:
+   1. doc_name (ex: Qualcomm.pdf)
+   2. doc_type (pdf only for now)
+   3. doc_hash - sha256 hash of the raw binary contents of the file. This is used to identify if the document has already been processed or not
+   4. ingestion_timestamp - Timestamp of when the file is processed
+   5. page_count - number of pages in the pdf
+2. Extract the text broken down by pages as well as sections. While the pages are not used currently, this will help future enhancements.
+3. Process each section recursively to identify the section heading and content. Sub sections are also processed and nested under the parent section to identify the exact path of the content.
+4. **Clean up**: Titles and section data is stripped of markdown characters (#, *), stripped of html tags and comments and stripped of excessive spaces and newlines
 5. The final structure of the data generated after this step is as follows:
    ```json
    {
@@ -296,15 +296,17 @@ agents-cli eval run \
 # Future Enhancements
 
 * ETL
-  * Identify the start and end page of each section for reference and validation  
-  * Further clean up of the data to clean up unnecessary characters  
-  * Move the snippets from each pdf into a dedicated section  
-  * Ignore smaller chunks of one word or less (Ex: “See Also”)  
-  * Handle versioning of the same file.  
-  * Use cloud pub/sub to auto-ingest files once uploaded to cloud storage  
+  * Identify the start and end page of each section for reference and validation.
+  * Further clean up of the data to clean up unnecessary characters.
+  * Move the snippets from each pdf into a dedicated section.
+  * Ignore smaller chunks of one word or less (Ex: "See Also").
+  * Handle versioning of the same file.
+  * Currently the ETL is running locally. This can be modified to run in cloud run on scheduler.
+      * Alternatively, use cloud pub/sub to auto-ingest files once uploaded to cloud storage.
   * Only processes pdfs for now. Support other data types also.
   * Remove references from the source document or handle them better.
 * GenAI Knowledge Application
   * Enable Authentication so that we aren't dealing with endpoints open to the public.
-  * Save session state to persistent storage (cloud run is transient)
+  * Save session state to persistent storage (cloud run is transient).
+  * Move to Agent Runtime instead of Cloud Run.
 
