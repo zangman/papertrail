@@ -286,7 +286,13 @@ agents-cli eval run \
   --app-name doc_search
 ```
 
+## Clean Up
 
+We can delete the cloud run instance with the following command:
+
+```bash
+gcloud run services delete doc-search --region=us-central1
+```
 
 ## Next Steps
 
