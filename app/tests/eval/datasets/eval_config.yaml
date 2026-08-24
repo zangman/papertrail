@@ -1,0 +1,17 @@
+metrics_to_run:
+  - hallucination
+  - final_response_quality
+  - final_response_match
+  - citation_format
+
+custom_metrics:
+  - name: citation_format
+    prompt_template: |
+      You are checking the citation format of an agent's answer.
+      The agent must cite sources inline as (DocName > Section), e.g. (Nvidia > History).
+      Prompt: {prompt}
+      Final response: {response}
+      If the answer correctly says it does not know (no citation needed), score 5.
+      Otherwise score 1-5: 5 = every factual claim carries a correctly formatted inline
+      citation, 1 = no citations or wrong format.
+      Return JSON: {"score": <1-5>, "explanation": "<reason>"}

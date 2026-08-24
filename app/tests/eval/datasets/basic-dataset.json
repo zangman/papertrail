@@ -1,0 +1,32 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "nvidia_founding",
+      "prompt": { "role": "user", "parts": [{"text": "What year was Nvidia founded? Who founded it?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "Nvidia was founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem."}] }
+      }
+    },
+    {
+      "eval_case_id": "qualcomm_founding",
+      "prompt": { "role": "user", "parts": [{"text": "When was Qualcomm founded?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "Qualcomm was founded in 1985."}] }
+      }
+    },
+    {
+      "eval_case_id": "amd_hq",
+      "prompt": { "role": "user", "parts": [{"text": "Where is AMD headquartered?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "AMD is headquartered in Santa Clara, California."}] }
+      }
+    },
+    {
+      "eval_case_id": "not_in_docs",
+      "prompt": { "role": "user", "parts": [{"text": "What is Apple's current quarterly revenue?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "The company documents do not contain information about Apple's quarterly revenue."}] }
+      }
+    }
+  ]
+}

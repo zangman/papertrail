@@ -45,3 +45,6 @@ root_agent = Agent(
   tools=[search_docs],
 )
 
+from google.adk.apps import App
+
+app = App(root_agent=root_agent, name="doc_search")

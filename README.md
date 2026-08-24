@@ -207,13 +207,91 @@ curl -X POST ${SERVICE_URL}/run -H "Content-Type: application/json" -d "{\"appNa
 ```
 ## Evaluation
 
+Here we attempt to evaluate the assistant's performance using `agents-cli` that is available with `google-adk`. We install it using `uvx google-agents-cli setup`.
+
+Since we haven't used this tool to create the project, we'll need to enable it for our project using the following command. In the `app` directory, run:
+
+```bash
+agents-cli scaffold enhance . --agent-directory doc_search -i
+```
+
+Answer the questions it asks.
+
+Once done, we set up a few sample prompts and responses in `tests/eval/datasets/basic-dataset.json`:
+
+```json
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "nvidia_founding",
+      "prompt": { "role": "user", "parts": [{"text": "What year was Nvidia founded? Who founded it?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "Nvidia was founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem."}] }
+      }
+    },
+    {
+      "eval_case_id": "qualcomm_founding",
+      "prompt": { "role": "user", "parts": [{"text": "When was Qualcomm founded?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "Qualcomm was founded in 1985."}] }
+      }
+    },
+    {
+      "eval_case_id": "amd_hq",
+      "prompt": { "role": "user", "parts": [{"text": "Where is AMD headquartered?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "AMD is headquartered in Santa Clara, California."}] }
+      }
+    },
+    {
+      "eval_case_id": "not_in_docs",
+      "prompt": { "role": "user", "parts": [{"text": "What is Apple's current quarterly revenue?"}] },
+      "reference": {
+        "response": { "role": "model", "parts": [{"text": "The company documents do not contain information about Apple's quarterly revenue."}] }
+      }
+    }
+  ]
+}
+```
+
+And mention all the metrics we want to evaluate on in `tests/eval/eval_config.yaml`:
+
+```yaml
+metrics_to_run:
+  - hallucination
+  - final_response_quality
+  - final_response_match
+  - citation_format
+
+custom_metrics:
+  - name: citation_format
+    prompt_template: |
+      You are checking the citation format of an agent's answer.
+      The agent must cite sources inline as (DocName > Section), e.g. (Nvidia > History).
+      Prompt: {prompt}
+      Final response: {response}
+      If the answer correctly says it does not know (no citation needed), score 5.
+      Otherwise score 1-5: 5 = every factual claim carries a correctly formatted inline
+      citation, 1 = no citations or wrong format.
+      Return JSON: {"score": <1-5>, "explanation": "<reason>"}
+```
+
+Then from the directory where the scaffolding was setup (the `app` directory), we run the following command to run the evaluation:
+
+```bash
+agents-cli eval run \
+  --dataset tests/eval/datasets/basic-dataset.json \
+  --config tests/eval/datasets/eval_config.yaml \
+  --url https://doc-search-444119881957.us-central1.run.app \
+  --app-name doc_search
+```
+
 
 
 ## Next Steps
 
+* We are using Google Cloud Run in the current implementation. For a real production app, it might be better to use Google Agent Runtime because it provides a lot more benefits out of the box (logging, monitoring, evaluation, authentication etc). But Cloud Run is a good way to have fine grain control on everything.
 * While this is a good start to a RAG implementation, a fully working UI will be good to have. Personally I like and am comfortable with openwebui. But Google ADK is not directly compatible. We'll need to build an adapter on top of it.
-* Deploy the agent on Google Cloud's agent runtime so we can get a lot of additional things like monitoring, eval and authentication for free.
-
 
 # Future Enhancements
 

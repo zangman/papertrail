@@ -1,0 +1,384 @@
+{
+  "eval_cases": [
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "What year was Nvidia founded? Who founded it?"
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Nvidia was founded on **April 5, 1993** (Nvidia/History/Founding). \n\nIt was founded by:\n* **Jensen Huang** (Nvidia/History/Founding)\n* **Chris Malachowsky** (Nvidia/History/Founding)\n* **Curtis Priem** (Nvidia/History/Founding)"
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "nvidia_founding",
+      "agent_data": {
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_348586",
+                        "args": {
+                          "query": "Nvidia founded founders year"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_348586",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (Nvidia/History/Founding)\nNvidia/History/Founding\nNvidia was founded on April 5, 1993,[9][10][11] by Jensen Huang, a Taiwanese-American electrical engineer who was previously the director of CoreWare at LSI Logic and a microprocessor designer at AMD; Chris Malachowsky, an engineer who worked at Sun Microsystems; and Curtis Priem, who was previously a senior staff engineer and graphics chip designer at IBM and Sun Microsystems ~~.~~ [12][13] In late 1992, the three men agreed to start the company\n\n[2] (Nvidia/History/Founding/Nvidia Corporation/Footnotes)\nNvidia/History/Founding/Nvidia Corporation/Footnotes\nFinancials as of fiscal year ended January 25, 2026 (FY26). References:[1][2]\nThe three co-founders envisioned 3D graphics-based processing as the best trajectory for tackling challenges that had eluded general-purpose computing methods ~~.~~ [18] As Huang later explained: \"We also observed that video games were simultaneously one of the most computationally challenging problems and would have incredibly high sales volume. Those two conditions don't happen very often. Video games was our killer app – a flywheel to reach large markets funding huge R&D to solve [18] massive computational problems. ~~\"~~\nThe first problem was who would quit first. Huang's wife, Lori, did not want him to resign from LSI unless Malachowsky resigned from Sun at the same time, and Malachowsky's wife, Melody, felt the same way about Huang.[19] Priem broke that deadlock by resigning first from Sun, effective December 31, 1992.[19] According to Priem, this put pressure on Huang and Malachowsky to not leave him to \"flail alone\", so they gave notice too.[20] Huang left LSI and \"officially joined Priem on February 17\", which was also Huang's 30th birthday, while Malachowsky left Sun in early March.[20] In early 1993, the three founders began working together on their new startup in Priem's townhouse [21] in Fremont, California.\nThe Denny's roadside diner in San Jose, California, where Nvidia's three cofounders agreed to start the company in late 1992\nWith $40,000 in the bank (equivalent to $89,000 in 2025), the company was born ~~.~~ [18] The company subsequently received $20 million of venture capital funding from Sequoia Capital, Sutter Hill Ventures, and others ~~.~~ [22]\nNvidia's former headquarters which was home to the company through most of its pre-AI period (still in use)\nDuring the late 1990s, Nvidia was one of 70 startup\ncompanies pursuing the idea that graphics acceleration for video games was the path to the future.[14] [14] Only two survived: Nvidia and ATI Technologies, the latter of which merged into AMD.\nNvidia initially had no name ~~.~~ [23] Priem's first idea was \"Primal Graphics\", a syllabic abbreviation of two of the founders' last names, but that left out Huang.[23] They soon discovered it was impossible to create a workable name with syllables from all three founders' names, after considering \"Huaprimal\", \"Prihuamal\", \"Malluapri\", etc ~~.~~ [23] The next idea came from Priem's idea for the name of Nvidia's first product.[23] Priem originally wanted to call it the \"GXNV\", as in the \"next version\" of the GX graphics chips which he had worked on at Sun.[21] Then Huang told Priem to \"drop the GX\", resulting in the name \"NV\" ~~.~~ [21] Priem made a list of words with the letters \"NV\" in them ~~.~~ [23] At one point, Malachowsky and Priem wanted to call the company NVision, but that name was already taken by a manufacturer of toilet paper.[15] Both Prie ~~m~~ [23] and Huang have taken credit for coming up with the name Nvidia ~~,~~ [15] from \" invidia\", the Latin word for \"envy\".[18] After the company outgrew Priem's townhouse, its original headquarters office was in Sunnyvale, California.[18]\nAerial view of Endeavor, the first of the two new Nvidia headquarters buildings, in Santa Clara, California, in 2017\nIn the early-to-mid 2000s, the company invested over a billion dollars to develop CUDA, a software platform and API (Application Programming Interfaces) that enabled GPUs to run massively parallel programs for a broad range of compute-intensive applications ~~.~~ [24][25][26] As a result, as of 2025, Nvidia controlled more than 80% of the market for GPUs used in training and deploying AI models ~~,~~ [24] and provided chips for over 75% of the world's TOP500 supercomputers ~~.~~ [1] The company has also expanded into gaming hardware and services, with products such as the Shield Portable, Shield Tablet, and Shield TV, and operates the GeForce Now cloud gaming service ~~.~~ [27] Furthermore, it\nEntrance of Endeavor headquarters building in 2018\nhas developed the Tegra line of mobile processors for smartphones, tablets, and automotive infotainment [28][29][30] systems.\n\n[3] (Nvidia/History/Founding/Nvidia Corporation/Semiconductors)\nNvidia/History/Founding/Nvidia Corporation/Semiconductors\nFounded\nApril 5, 1993, in Sunnyvale, California, US\nFounders\nJensen Huang Chris Malachowsky\nCurtis Priem\nHeadquarters Santa Clara, California, US Area served Worldwide\nArea served Worldwide Key people Jensen Huang (president and CEO)\nBill Dally (chief scientist) Colette Kress (CFO)\nby sketching out their initial ideas in a meeting at a Denny's roadside diner on Berryessa Road in East San [14][15][16][17] Jose.\nAt the time, Malachowsky and Priem were frustrated with Sun's management and were looking to leave, but Huang was on \"firmer ground\" ~~,~~ [18] in that he was already running his own division at LSI ~~.~~ [15] The three co-founders discussed a vision of the future for gaming and multimedia markets, which was so compelling that Huang decided to leave LS ~~I~~ [18] and become the chief executive officer of their new [15] startup.\nUS$215.9 billion (FY26) US$130.4 billion (FY26)\nRevenue US$215.9 billion (FY26) Operating US$130.4 billion (FY26) income Net income US$120.1 billion (FY26) Total assets US$206.8 billion (FY26) Total equity US$144.3 billion (FY26) Number of 42,000 (FY26) employees\nSubsidiaries Mental Images Website nvidia.com (https://www.nvidi a.com/)\n\n[4] (Nvidia/History/Founding/Nvidia Corporation/Type)\nNvidia/History/Founding/Nvidia Corporation/Type\nTraded as Nasdaq: NVDA (https://www.n asdaq.com/market-activity/sto cks/nvda)\nNasdaq-100 component DJIA component S&P 100 component S&P 500 component\nIndustry\n\n[5] (Nvidia)\nNvidia\nNvidia Corporation [a] (/ɛnˈvɪdiə/ _en-VID-ee-ə_ ) is an American multinational technology company headquartered in Santa Clara, California. The company develops graphics processing units (GPUs), systems on chips (SoCs), and application programming interfaces (APIs) for data science, highperformance computing, artificial intelligence (AI), [5][6] and mobile and automotive applications ~~.~~ Founded in 1993 by Jensen Huang, Chris Malachowsky, and Curtis Priem, Nvidia has been widely described as a Big Tech company.\nOriginally focused on GPUs for video games, Nvidia quoted themselves as a \"full-stack\" computing enterprise. They broadened their usage into other markets, including artificial intelligence (AI), professional visualization, and supercomputing. The company's product lines include GeForce GPUs for gaming and creative workloads, and professional GPUs for edge computing, scientific research, and industrial applications. As of the first quarter of 2025, Nvidia held a 92% share of the discrete desktop and [7][8] laptop GPU market ~~.~~"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Nvidia was founded on **April 5, 1993** (Nvidia/History/Founding). \n\nIt was founded by:\n* **Jensen Huang** (Nvidia/History/Founding)\n* **Chris Malachowsky** (Nvidia/History/Founding)\n* **Curtis Priem** (Nvidia/History/Founding)"
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "When was Altera founded?"
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Altera was founded in June 1983 by Robert Hartmann, Paul Newhagen, James Sansbury, and Michael Magranet (Altera/Early history, Altera/Products/Semiconductor intellectual property cores/Altera Corporation)."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "altera_founding",
+      "agent_data": {
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_33728",
+                        "args": {
+                          "query": "Altera founded"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_33728",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (Altera/Early history)\nAltera/Early history\nThe company was founded in 1983 by semiconductor veterans Robert Hartmann, Paul Newhagen, James Sansbury, and Michael Magranet with $1,300,000 in seed money. The name of the company was a play on \"alterable\", the type of chips the company created. The founders selected Rodney Smith to be the company's first CEO ~~.~~ [3] In 1988, Altera became a public company [4] via an initial public offering (IPO).\n\n[2] (Altera/See also)\nAltera/See also\nXilinx\n\n[3] (Altera/Products/Semiconductor intellectual property cores/Altera Corporation)\nAltera/Products/Semiconductor intellectual property cores/Altera Corporation\nAltera headquarters in San Jose, California in 2026\nType Private Traded as Nasdaq: ALTR (until 2015) Industry Integrated circuits Founded June 1983 Founders Robert Hartmann, Paul Newhagen, James Sansbury, Michael Magranet Headquarters San Jose, California, United States Key people Raghib Hussain (CEO) Products FPGAs, CPLDs, Embedded systems, ASICs Revenue $1.932 billion (2014) Net income $472 million (2014) Total assets $5.674 billion (2014) Total equity $3.285 billion (2014)\nevery block in a design from scratch. In 2000, Altera acquired Designpro and Northwest Logic, providers of IP cores, in order to expand its design capabilities and move towards delivery of complete system-on-chip [6][7] solutions.\nNumber of 3,091 (2014) employees Parent Silver Lake (51%)[1] Intel (49%) Website altera.com (http://altera.c om) Footnotes [2]\n\n[4] (Altera)\nAltera\nAltera Corporation is a manufacturer of programmable logic devices (PLDs) headquartered in San Jose, California, with a primary focus on fieldprogrammable gate array (FPGA) technology and system-on-a-chip (SoC) FPGAs. Founded in 1983, it was acquired by Intel in 2015, re-established under the Altera name in 2024, and in 2025 became a privately held company majority-owned by private equity firm Silver Lake.\n\n[5] (Altera/Intel partnership, acquisition and ownership/Acquisition and ownership by Intel)\nAltera/Intel partnership, acquisition and ownership/Acquisition and ownership by Intel\n[19] In December 2015, Intel acquired Altera for $16.7 billion in cash. [20] Altera became Intel's newly formed business unit called the Programmable Solutions Group (PSG).[21]\nIn October 2023, Intel announced that at the start of 2024 it would begin a process of spinning off PSG into a separate company, while maintaining majority ownership and intending to seek an IPO within three [22] years. [23] In February 2024, Intel announced that the newly independent company would reestablish the Altera name and branding,[24] and on January 1, 2025, Altera officially became an independent subsidiary of Intel ~~.~~ [25][26]\nOn April 14, 2025, Intel announced that they agreed to sell a 51% controlling stake to Silver Lake, a private equity firm.[27][28] With this sale, Intel also cancelled their plan to conduct an IPO for the Altera business, since the majority stake is now owned by Silver Lake. It was announced that Raghib Hussain will replace Sandra Rivera as the chief executive officer of Altera, with an effective date of May 5, [29] 2025.\nOn September 15, 2025, Altera announced that Silver Lake completed the acquisition of a 51% stake in [30] the company, while Intel holds the remaining 49% ~~.~~\nOn June 21, 2006, after an investigation by the U.S. Securities and Exchange Commission, the company restated its financial results from 1996 to 2005 to correct accounting errors related to options backdating. [31][32] The chief financial officer of the company resigned. [33] Altera filed a petition to overturn related [34] regulations but was, under Intel, denied in 2020 ~~.~~"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Altera was founded in June 1983 by Robert Hartmann, Paul Newhagen, James Sansbury, and Michael Magranet (Altera/Early history, Altera/Products/Semiconductor intellectual property cores/Altera Corporation)."
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Where is AMD headquartered?"
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "AMD is headquartered in **Santa Clara, California** (AMD; AMD/Advanced Micro Devices, Inc.). \n\nHistorically, AMD was headquartered in Sunnyvale, California (for 47 years), but moved its headquarters to a new building in Santa Clara in 2016 (AMD/History/2006–2019)."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "amd_hq",
+      "agent_data": {
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_169311",
+                        "args": {
+                          "query": "AMD headquarters"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_169311",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (AMD/Advanced Micro Devices, Inc.)\nAMD/Advanced Micro Devices, Inc.\nHeadquarters in Santa Clara, California, in\n2020 Trade name AMD Type Public Traded as Nasdaq: AMD (https://www.n asdaq.com/market-activity/st ocks/amd) Nasdaq-100 component S&P 100 component S&P 500 component Industry Semiconductors Computer hardware Founded May 1, 1969 Founder Team led by Jerry Sanders Headquarters Santa Clara, California, U.S. Area served Worldwide Key people Lisa Su (chair & CEO) Mark Papermaster (CTO) Jean Hu (CFO) Phil Guido (CCO) Products AMD CPUs · AMD GPUs · AMD FPGAs\nto its strong position in the PC market and its Athlon and Opteron processors. The company faced challenges in the late 2000s and early 2010s, as it [6] struggled to compete with Intel.\nBrands Ryzen · Radeon · Athlon · Epyc · Threadripper · Virtex · Vivado · Sempron · Duron · AMD Instinct Revenue US$34.6 billion (2025) Operating US$3.69 billion (2025) income Net income US$4.34 billion (2025) Total assets US$76.9 billion (2025) Total equity US$63.0 billion (2025) Number of c. 31,000 (2025) employees Website amd.com (https://www.amd.c om/) Footnotes [1]\nIn the late 2010s, AMD regained market share by pursuing a penetration pricing strateg ~~y~~ [7] for its Ryzen processors, offering a competitive performance and lower costs than Intel microprocessors.[8] In 2022, AMD surpassed Intel by market capitalization for the first time ~~.~~ [9][10]\n\n[2] (AMD)\nAMD\nAdvanced Micro Devices, Inc. ( AMD ) is an American multinational semiconductor company headquartered in Santa Clara, California. It develops central processing units (CPUs), graphics processing units (GPUs), field-programmable gate arrays (FPGAs), system-on-chips (SoCs), and highperformance computer components. AMD serves a wide range of business and consumer markets, including personal computers (PCs), gaming, data centers, and embedded systems.\nAMD's main products include microprocessors, embedded processors, and graphics processors for servers, workstations, PCs, and embedded system applications, as well as chipsets for motherboards. The company has also expanded into new markets, such as data centers, gaming, and high-performance computing ~~.~~ [2] AMD's processors are used in a wide range of computing devices, including PCs, servers, laptops, and gaming consoles. Initially manufacturing its own processors, the company outsourced its manufacturing after GlobalFoundries was spun off in 2009. Through its Xilinx acquisition in 2022, AMD offers field-programmable gate array (FPGA) products.\nAMD was founded in 1969 by Jerry Sanders and a group of his fellow Fairchild Semiconductor colleagues.[3] The company's early products were primarily memory chips and other computer components. In 1975, AMD entered the microprocessor market, competing with Intel, its main rival in the industry, by reverse-engineering Intel's 8080. This led to the initial cross-license agreement allowing AMD to build legal clones of Intel processors, including the x86 family of processors from 1981.[4] The two companies fought a seven-year legal battle after Intel refused to share the blueprint of their i386 with AMD, ending in the latter's favor in 1994 but requiring AMD to develop their own x86 microprocessors in-house ~~.~~ [5] In the early 2000s, AMD experienced significant growth and success, partly due\n\n[3] (AMD/History/2006–2019)\nAMD/History/2006–2019\nOn July 24, 2006, AMD announced its acquisition of the Canadian 3D graphics card company ATI Technologies. AMD paid $4.3 billion and 58 million shares of its capital stock, for approximately $5.4 billion. The transaction was completed on October 25, 2006.[86] On August 30, 2010, AMD announced that it would retire the ATI brand name for its graphics chipsets in favor of the AMD brand [87][88] name.\nIn October 2008, AMD announced plans to spin off manufacturing operations in the form of GlobalFoundries Inc., a multibillion-dollar joint venture with Advanced Technology Investment Co., an investment company formed by the government of Abu Dhabi. The partnership and spin-off gave AMD an infusion of cash and allowed it to focus solely on chip design ~~.~~ [89] To assure the Abu Dhabi investors of the new venture's success, AMD's CEO Hector Ruiz stepped down in July 2008, while remaining executive chairman, in preparation for becoming chairman of GlobalFoundries in March 2009 ~~.~~ [90][91] President and COO Dirk Meyer became AMD's CEO.[92] Recessionary losses necessitated AMD cutting [93] 1,100 jobs in 2009 ~~.~~\nIn August 2011, AMD announced that former Lenovo executive Rory Read would be joining the company as CEO, replacing Meyer ~~.~~ [94] In November 2011, AMD announced plans to lay off more than 10% (1,400) of its employees from across all divisions worldwide ~~.~~ [95] In October 2012, it announced plans to lay off an additional 15% of its workforce to reduce costs in the face of declining sales revenue.[96] The inclusion of AMD chips into the PlayStation 4 and Xbox One were later seen as saving AMD from bankruptcy ~~.~~ [97][98]\nAMD acquired the low-power server manufacturer SeaMicro in early 2012, with an eye to bringing out [99] an Arm64 server chip ~~.~~\nOn October 8, 2014, AMD announced that Rory Read had stepped down after three years as president and chief executive officer ~~.~~ [100] He was succeeded by Lisa Su, a key lieutenant who had been chief operating officer since June.[101]\nOn October 16, 2014, AMD announced a new restructuring plan along with its Q3 results. Effective July 1, 2014, AMD reorganized into two business groups: Computing and Graphics, which primarily includes desktop and notebook processors and chipsets, discrete GPUs, and professional graphics; and Enterprise,\nEmbedded, and Semi-Custom, which primarily includes server and embedded processors, dense servers, semi-custom SoC products (including solutions for gaming consoles), engineering services, and royalties. As part of this restructuring, AMD announced that 7% of its global workforce would be laid off by the end of 2014 ~~.~~ [102]\nAfter the GlobalFoundries spin-off and subsequent layoffs, AMD was left with significant vacant space at 1 AMD Place, its aging Sunnyvale headquarters office complex. In August 2016, AMD's 47 years in Sunnyvale came to a close when it signed a lease with the Irvine Company for a new 220,000 sq. ft. headquarters building in Santa Clara.[103] AMD's new location at Santa Clara Square faces the headquarters of arch-rival Intel across the Bayshore Freeway and San Tomas Aquino Creek. Around the same time, AMD also agreed to sell 1 AMD Place to the Irvine Company.[104] In April 2019, the Irvine Company secured approval from the Sunnyvale City Council of its plans to demolish 1 AMD Place and [104] redevelop the entire 32-acre site into townhomes and apartments ~~.~~\n\n[4] (AMD/External links)\nAMD/External links\nOfficial website (https://www.amd.com/)\n- Business data for Advanced Micro Devices, Inc.: Google (https://www.google.com/finance/q uote/AMD:NASDAQ) · Reuters (https://www.reuters.com/markets/companies/AMD.O) · SEC filings (https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=2488) · Yahoo! (https://finance.yahoo.com/quote/AMD)\n\n[5] (Nvidia/History/Founding/Nvidia Corporation)\nNvidia/History/Founding/Nvidia Corporation\nLogo since 2006\nHeadquarters in Santa Clara, California, in 2023"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "AMD is headquartered in **Santa Clara, California** (AMD; AMD/Advanced Micro Devices, Inc.). \n\nHistorically, AMD was headquartered in Sunnyvale, California (for 47 years), but moved its headquarters to a new building in Santa Clara in 2016 (AMD/History/2006–2019)."
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "What is Apple's current quarterly revenue?"
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Based on the provided documents, there is no information about Apple's current quarterly revenue."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "not_in_docs",
+      "agent_data": {
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_172098",
+                        "args": {
+                          "query": "Apple quarterly revenue"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_172098",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (Intel/Products and markets/Use of Intel products by Apple Incorporated (2005–2019))\nIntel/Products and markets/Use of Intel products by Apple Incorporated (2005–2019)\nOn June 6, 2005, Steve Jobs, then CEO of Apple, announced that Apple would be transitioning the Macintosh from its long favored PowerPC architecture to the Intel x86 architecture because the future PowerPC road map was unable to satisfy Apple's needs ~~.~~ [31][167] This was seen as a win for Intel,[32] although an analyst called the move \"risky\" and \"foolish\", as Intel's current offerings at the time were considered to be behind those of AMD and IBM ~~.~~ [33] The first Mac computers containing Intel CPUs were announced on January 10, 2006, and Apple had its entire line of consumer Macs running on Intel processors by early August 2006. The Apple Xserve server was updated to Intel Xeon processors from November 2006 and was offered in a configuration similar to Apple's Mac Pro ~~.~~ [168]\nDespite Apple's use of Intel products, relations between the two companies were strained at times ~~.~~ [169] Rumors of Apple switching from Intel processors to its own designs began circulating as early as 2011 ~~.~~ [170] On June 22, 2020, during Apple's annual WWDC, Tim Cook, Apple's CEO, announced that it would be transitioning the company's entire Mac line from Intel CPUs to custom Apple-designed processors based on the ARM architecture over the course of the next two years. In the short term, this transition was estimated to have minimal effects on Intel, as Apple only accounted for 2% to 4% of its revenue. However, at the time it was believed that Apple's shift to its own chips might prompt other PC manufacturers to reassess their reliance on Intel and the x86 architecture ~~.~~ [87][88] By November 2020, [171][172][173][174] Apple unveiled the M1, its processor custom-designed for the Mac ~~.~~\n\n[2] (Nvidia/Corporate affairs/Finances)\nNvidia/Corporate affairs/Finances\nFor the fiscal year 2020, Nvidia reported earnings of US$2.796 billion, with an annual revenue of US$10.918 billion, a decline of 6.8% over the previous fiscal cycle. Nvidia's shares traded at over $531 per share, and its market capitalization was valued at over US$328.7 billion [195][196] in January 2021 ~~.~~\nFor the Q2 of 2020, Nvidia reported sales of $3.87 billion, Nvidia stock price (1999–2026) which was a 50% rise from the same period in 2019. The surge in sales was driven by people's higher demand for computer technology. According to the financial chief of the company, Colette Kress, the effects of the pandemic will \"likely reflect this evolution in enterprise workforce trends with a greater focus on technologies, such as Nvidia laptops and virtual workstations, that enable remote work and virtual [198] collaboration.\"[197] In May 2023, Nvidia crossed $1 trillion in market valuation during trading hours ~~,~~ and grew to $1.2 trillion by the following November.[199]\n\n[3] (Intel/History/Renewed competition and other developments (2018–present))\nIntel/History/Renewed competition and other developments (2018–present)\nDue to Intel's issues with its 10 nm process node and the company's slow processor development ~~,~~ [67] the company now found itself in a market with intense competition.[84] The company's main competitor, AMD, introduced the Zen microarchitecture and a new chiplet-based design to critical acclaim. Since its introduction, AMD, once unable to compete with Intel in the high-end CPU market, has undergone a resurgence ~~,~~ [85] and Intel's dominance and market share have considerably decreased ~~.~~ [86] In addition, Apple began to transition away from the x86 architecture and Intel processors to its own Apple silicon for its Macintosh computers in 2020. The transition is expected to affect Intel minimally; however, it might prompt other PC manufacturers to reevaluate their reliance on Intel and the x86 architecture.[87][88]\n\n[4] (AMD/Corporate affairs/Business trends)\nAMD/Corporate affairs/Business trends\nThe key trends for AMD are (as of the financial year ending in late December) ~~:~~ [321][322]\n||Revenue (US$ bn)|Net profit (US$ m)|Total assets (US$ bn)|Employees|\n|---|---|---|---|---|\n|2017|5.3|43|3.5|8,900|\n|2018|6.4|337|4.5|10,100|\n|2019|6.7|341|6.0|11,400|\n|2020|9.7|2,490|8.9|12,600|\n|2021|16.4|3,162|12.4|15,500|\n|2022|23.6|1,320|67.5|25,000|\n|2023|22.6|854|67.8|26,000|\n|2024|25.7|1,641|69.2|28,000|\n|2025|34.6|4,335|76.9|31,000|\n\n[5] (Intel/Corporate affairs/Business trends)\nIntel/Corporate affairs/Business trends\nThe key trends for Intel are (as of the financial year ending in late December) ~~:~~ [233]\n|Year|Revenue (US$ bn)|Net profit (US$ bn)|Total assets (US$ bn)|Employees (k)|\n|---|---|---|---|---|\n|2017|62.7|9.6|123|102|\n|2018|70.8|21.0|127|107|\n|2019|71.9|21.0|136|110|\n|2020|77.8|20.8|153|110|\n|2021|79.0|19.8|168|121|\n|2022|63.0|8.0|182|131|\n|2023|54.2|1.6|191|124|\n|2024|53.1|−19.2|196|109|\n|2025|52.9|−0.3|211|85|"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_256334",
+                        "args": {
+                          "query": "Apple"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_256334",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (Intel/Products and markets/Use of Intel products by Apple Incorporated (2005–2019))\nIntel/Products and markets/Use of Intel products by Apple Incorporated (2005–2019)\nOn June 6, 2005, Steve Jobs, then CEO of Apple, announced that Apple would be transitioning the Macintosh from its long favored PowerPC architecture to the Intel x86 architecture because the future PowerPC road map was unable to satisfy Apple's needs ~~.~~ [31][167] This was seen as a win for Intel,[32] although an analyst called the move \"risky\" and \"foolish\", as Intel's current offerings at the time were considered to be behind those of AMD and IBM ~~.~~ [33] The first Mac computers containing Intel CPUs were announced on January 10, 2006, and Apple had its entire line of consumer Macs running on Intel processors by early August 2006. The Apple Xserve server was updated to Intel Xeon processors from November 2006 and was offered in a configuration similar to Apple's Mac Pro ~~.~~ [168]\nDespite Apple's use of Intel products, relations between the two companies were strained at times ~~.~~ [169] Rumors of Apple switching from Intel processors to its own designs began circulating as early as 2011 ~~.~~ [170] On June 22, 2020, during Apple's annual WWDC, Tim Cook, Apple's CEO, announced that it would be transitioning the company's entire Mac line from Intel CPUs to custom Apple-designed processors based on the ARM architecture over the course of the next two years. In the short term, this transition was estimated to have minimal effects on Intel, as Apple only accounted for 2% to 4% of its revenue. However, at the time it was believed that Apple's shift to its own chips might prompt other PC manufacturers to reassess their reliance on Intel and the x86 architecture ~~.~~ [87][88] By November 2020, [171][172][173][174] Apple unveiled the M1, its processor custom-designed for the Mac ~~.~~\n\n[2] (Intel/History/Renewed competition and other developments (2018–present))\nIntel/History/Renewed competition and other developments (2018–present)\nDue to Intel's issues with its 10 nm process node and the company's slow processor development ~~,~~ [67] the company now found itself in a market with intense competition.[84] The company's main competitor, AMD, introduced the Zen microarchitecture and a new chiplet-based design to critical acclaim. Since its introduction, AMD, once unable to compete with Intel in the high-end CPU market, has undergone a resurgence ~~,~~ [85] and Intel's dominance and market share have considerably decreased ~~.~~ [86] In addition, Apple began to transition away from the x86 architecture and Intel processors to its own Apple silicon for its Macintosh computers in 2020. The transition is expected to affect Intel minimally; however, it might prompt other PC manufacturers to reevaluate their reliance on Intel and the x86 architecture.[87][88]\n\n[3] (Nvidia/Products and development/2016–2019)\nNvidia/Products and development/2016–2019\nOn May 6, 2016, Nvidia unveiled the first GPUs of the GeForce 10 series, the GTX 1080 and 1070, based on the company's new Pascal microarchitecture. Nvidia claimed that both models outperformed its Maxwell-based Titan X model; the models incorporate GDDR5X and GDDR5 memory respectively, and use a 16 nm manufacturing process. The architecture also supports a new hardware feature known as simultaneous multi-projection (SMP), which is designed to improve the quality of multi-monitor and virtual reality (VR) rendering.[91][92][93] Laptops that include these GPUs and are sufficiently thin – as of late 2017, under 0.8 inches (20 mm) – have been designated as meeting Nvidia's \"Max-Q\" design [94] standard ~~.~~\nIn July 2017, Nvidia and Chinese search giant Baidu announced a far-reaching AI partnership that includes cloud computing, autonomous driving, consumer devices, and Baidu's open-source AI framework PaddlePaddle. Baidu unveiled that Nvidia's Drive PX 2 AI will be the foundation of its autonomous-vehicle platform.[95]\n[96] On December 7, 2017, Nvidia released the Titan V ~~.~~ [97] On March 27, 2018, Nvidia released the Nvidia Quadro GV100 ~~.~~ [98] On September 27, 2018, Nvidia released the RTX 2080 GPUs. In 2018, Google announced that Nvidia's Tesla P4 graphic cards would be integrated into Google Cloud service's artificial [99] intelligence.\nIn May 2018, on the Nvidia user forum, a thread was started[100] asking the company to update users when it would release web drivers for its cards installed on legacy Mac Pro machines up to mid-2012 5,1 running the macOS Mojave operating system 10.14. Web drivers are required to enable graphics acceleration and multiple display monitor capabilities of the GPU. On its Mojave update info website, Apple stated that macOS Mojave would run on legacy machines with 'Metal compatible' graphics cards[101] and listed Metal compatible GPUs, including some manufactured by Nvidia.[102] However, this list did not include Metal compatible cards that currently work in macOS High Sierra using Nvidiadeveloped web drivers. In September, Nvidia responded, \"Apple fully controls drivers for macOS. But if Apple allows, our engineers are ready and eager to help Apple deliver great drivers for macOS 10.14 (Mojave). ~~\"~~ [103] In October, Nvidia followed this up with another public announcement, \"Apple fully controls drivers for macOS. Unfortunately, Nvidia currently cannot release a driver unless it is approved by Apple, ~~\"~~ [104] suggesting a possible rift between the two companies.[105] By January 2019, with still no sign of the enabling web drivers, Apple Insider weighed into the controversy with a claim that Apple management \"doesn't want Nvidia support in macOS\".[106] The following month, Apple Insider followed this up with another claim that Nvidia support was abandoned because of \"relational issues in the past\" ~~,~~ [107] and that Apple was developing its own GPU technology ~~.~~ [108] Without Apple-approved Nvidia web drivers, Apple users are faced with replacing their Nvidia cards with a competing supported brand, [109] such as AMD Radeon from the list recommended by Apple ~~.~~\n\n[4] (Altera/See also)\nAltera/See also\nXilinx\n\n[5] (Intel/History)\nIntel/History\nIntel Ireland\nWebsite intel.com (https://www.intel.c om/)"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "call_232207",
+                        "args": {
+                          "query": "revenue"
+                        },
+                        "name": "search_docs"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "call_232207",
+                        "name": "search_docs",
+                        "response": {
+                          "result": "[1] (Nvidia/Corporate affairs/Finances)\nNvidia/Corporate affairs/Finances\nFor the fiscal year 2020, Nvidia reported earnings of US$2.796 billion, with an annual revenue of US$10.918 billion, a decline of 6.8% over the previous fiscal cycle. Nvidia's shares traded at over $531 per share, and its market capitalization was valued at over US$328.7 billion [195][196] in January 2021 ~~.~~\nFor the Q2 of 2020, Nvidia reported sales of $3.87 billion, Nvidia stock price (1999–2026) which was a 50% rise from the same period in 2019. The surge in sales was driven by people's higher demand for computer technology. According to the financial chief of the company, Colette Kress, the effects of the pandemic will \"likely reflect this evolution in enterprise workforce trends with a greater focus on technologies, such as Nvidia laptops and virtual workstations, that enable remote work and virtual [198] collaboration.\"[197] In May 2023, Nvidia crossed $1 trillion in market valuation during trading hours ~~,~~ and grew to $1.2 trillion by the following November.[199]\n\n[2] (AMD/Corporate affairs/Business trends)\nAMD/Corporate affairs/Business trends\nThe key trends for AMD are (as of the financial year ending in late December) ~~:~~ [321][322]\n||Revenue (US$ bn)|Net profit (US$ m)|Total assets (US$ bn)|Employees|\n|---|---|---|---|---|\n|2017|5.3|43|3.5|8,900|\n|2018|6.4|337|4.5|10,100|\n|2019|6.7|341|6.0|11,400|\n|2020|9.7|2,490|8.9|12,600|\n|2021|16.4|3,162|12.4|15,500|\n|2022|23.6|1,320|67.5|25,000|\n|2023|22.6|854|67.8|26,000|\n|2024|25.7|1,641|69.2|28,000|\n|2025|34.6|4,335|76.9|31,000|\n\n[3] (Intel/Corporate affairs/Business trends)\nIntel/Corporate affairs/Business trends\nThe key trends for Intel are (as of the financial year ending in late December) ~~:~~ [233]\n|Year|Revenue (US$ bn)|Net profit (US$ bn)|Total assets (US$ bn)|Employees (k)|\n|---|---|---|---|---|\n|2017|62.7|9.6|123|102|\n|2018|70.8|21.0|127|107|\n|2019|71.9|21.0|136|110|\n|2020|77.8|20.8|153|110|\n|2021|79.0|19.8|168|121|\n|2022|63.0|8.0|182|131|\n|2023|54.2|1.6|191|124|\n|2024|53.1|−19.2|196|109|\n|2025|52.9|−0.3|211|85|\n\n[4] (Intel/Market standing/Operating segments)\nIntel/Market standing/Operating segments\n- Client Computing Group – 51.8% of 2020 revenues – produces PC processors and [208][209]\n- related components.\n- Data Center Group – 33.7% of 2020 revenues – produces hardware components used in [208]\n- server, network, and storage platforms ~~.~~\n- Internet of Things Group – 5.2% of 2020 revenues – offers platforms designed for retail, [208]\n- transportation, industrial, buildings and home use.\n- Programmable Solutions Group – 2.4% of 2020 revenues – manufactures programmable [208]\n- semiconductors (primarily FPGAs).\n\n[5] (Nvidia/Controversies/Improper disclosures about cryptomining)\nNvidia/Controversies/Improper disclosures about cryptomining\nIn 2018, Nvidia's chips became popular for cryptomining, the process of obtaining crypto rewards in exchange for verifying transactions on distributed ledgers, the United States Securities and Exchange Commission (SEC) said. However, the company failed to disclose that it was a \"significant element\" of its revenue growth from sales of chips designed for gaming, the SEC further added in a statement and charging order. Those omissions misled investors and analysts who were interested in understanding the impact of cryptomining on Nvidia's business, the SEC emphasized. Nvidia, which did not admit or deny the findings, has agreed to pay $5.5 million to settle civil charges, according to a statement made by the [301] SEC in May 2022 ~~.~~"
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              },
+              {
+                "author": "doc_chat_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Based on the provided documents, there is no information about Apple's current quarterly revenue."
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
