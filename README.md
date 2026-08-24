@@ -14,7 +14,7 @@
   * [Clean Up](#clean-up)
   * [Next Steps](#next-steps)
 - [Future Enhancements](#future-enhancements)
-
+- [References](#references)
 # Summary
 
 This document explains one approach on how to build an enterprise GenAI application on GCP. It uses a source corpus of PDFs which are articles about Tech companies and creates a Retrieval Augmented Generation (RAG) system and a Knowledge Assistant app that uses LLM to fetch the relevant information and answer questions.
@@ -38,7 +38,7 @@ Tech used in the development of this app:
 
 # Source data
 
-For demonstration purposes, we use articles of various tech companies (AMD, Nvidia etc) downloaded as pdfs directly from wikipedia.
+For demonstration purposes, we use articles of various [tech companies (AMD, Nvidia etc)](https://github.com/zangman/papertrail/tree/main/etl/Tech%20companies) downloaded as pdfs directly from wikipedia.
 
 We create a new bucket in cloud storage and create the following folders within:
 
@@ -331,3 +331,8 @@ gcloud run services delete doc-search --region=us-central1
   * Save session state to persistent storage (cloud run is transient).
   * Move to Agent Runtime instead of Cloud Run.
 
+# References
+
+* [Autonomous Embedding Generation on BigQuery](https://docs.cloud.google.com/bigquery/docs/autonomous-embedding-generation)
+* [Building agents with Agents CLI](https://adk.dev/tutorials/coding-with-ai/#agents-cli)
+* TODO: More references to be added here.
