@@ -301,6 +301,43 @@ agents-cli eval run \
   --app-name doc_search
 ```
 
+The evaluation results seem surprisingly good which leads me to believe we need more test cases to be added. I think one area would definitely be in citation correctness that we can add in the future.
+
+```
+Evaluation Summary
+
+hallucination_v1:
+  num_cases_total: 4
+  num_cases_valid: 4
+  num_cases_error: 0
+  mean_score: 1.0000
+  stdev_score: 0.0000
+  pass_rate: 1.0000
+
+final_response_quality_v1:
+  num_cases_total: 4
+  num_cases_valid: 4
+  num_cases_error: 0
+  mean_score: 0.6667
+  stdev_score: 0.4714
+  pass_rate: 0.5000
+
+final_response_match_v2:
+  num_cases_total: 4
+  num_cases_valid: 4
+  num_cases_error: 0
+  mean_score: 0.7500
+  stdev_score: 0.5000
+  pass_rate: 0.7500
+
+citation_format:
+  num_cases_total: 4
+  num_cases_valid: 4
+  num_cases_error: 0
+  mean_score: 4.2500
+  stdev_score: 1.5000
+```
+
 ## Clean Up
 
 We can delete the cloud run instance with the following command:
@@ -311,7 +348,7 @@ gcloud run services delete doc-search --region=us-central1
 
 ## Next Steps
 
-* We are using Google Cloud Run in the current implementation. For a real production app, it might be better to use Google Agent Runtime because it provides a lot more benefits out of the box (logging, monitoring, evaluation, authentication etc). But Cloud Run is a good way to have fine grain control on everything.
+* We are using Google Cloud Run in the current implementation. It might be useful to also evaluate Google Agent Runtime because it provides a lot more benefits out of the box (logging, monitoring, evaluation, authentication etc). But Cloud Run is a good way to have fine grain control on everything.
 * While this is a good start to a RAG implementation, a fully working UI will be good to have. Personally I like and am comfortable with openwebui. But Google ADK is not directly compatible. We'll need to build an adapter on top of it.
 
 # Future Enhancements
