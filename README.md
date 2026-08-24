@@ -1,4 +1,4 @@
-# Enterprise GenAI Knowledge Assistant on GCP using RAG
+# PaperTrail - Enterprise GenAI Knowledge Assistant on GCP using RAG
 
 - [Summary](#summary)
 - [Source data](#source-data)
