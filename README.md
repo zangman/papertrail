@@ -301,7 +301,7 @@ agents-cli eval run \
   --app-name doc_search
 ```
 
-The evaluation results seem surprisingly good which leads me to believe we need more test cases to be added. I think one area would definitely be in citation correctness that we can add in the future.
+Results:
 
 ```
 Evaluation Summary
@@ -337,6 +337,8 @@ citation_format:
   mean_score: 4.2500
   stdev_score: 1.5000
 ```
+
+Looking at these results points to a few things - hallucination seems to be doing fine. But the response quality could be better. I would also check citation_format and see if that can be improved. We're also missing citation correctness in this eval, so that could be added as well at a later point.
 
 ## Clean Up
 
